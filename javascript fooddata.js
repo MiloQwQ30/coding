@@ -1,4 +1,4 @@
-javascript
+
 javascript
 const appId = 'YOUR_APP_ID';
 const appKey = 'YOUR_APP_KEY';
