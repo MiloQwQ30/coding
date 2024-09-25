@@ -1,0 +1,28 @@
+html
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recipe Generator</title>
+</head>
+<body>
+    <h1>Generate Recipes</h1>
+    <form id="recipeForm">
+        <label for="ingredients">Enter Ingredients (comma-separated):</label>
+        <input type="text" id="ingredients" name="ingredients" required>
+        <button type="submit">Generate Recipes</button>
+    </form>
+    <div id="recipeResults"></div>
+
+    <script>
+        const apiKey = 'YOUR_SPOONACULAR_API_KEY';
+
+        document.getElementById('recipeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const ingredients = document.getElementById('ingredients').value;
+            fetchRecipes(ingredients);
+        });
+
+        function fetchRecipes(ingredients) 
