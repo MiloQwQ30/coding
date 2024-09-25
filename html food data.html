@@ -1,0 +1,27 @@
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Data Search</title>
+</head>
+<body>
+    <h1>Search for Food Data</h1>
+    <form id="foodForm">
+        <label for="ingredient">Enter Ingredient:</label>
+        <input type="text" id="ingredient" name="ingredient" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+
+    <script>
+        const appId = 'YOUR_APP_ID';
+        const appKey = 'YOUR_APP_KEY';
+
+        document.getElementById('foodForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const ingredient = document.getElementById('ingredient').value;
+            fetchFoodData(ingredient);
+        });
