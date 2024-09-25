@@ -1,0 +1,27 @@
+html
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker</title>
+</head>
+<body>
+    <h1>Weekly Calorie Tracker</h1>
+    <form id="calorieForm">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="calories">Calories:</label>
+        <input type="number" id="calories" name="calories" required>
+        <button type="submit">Record</button>
+    </form>
+    <div id="weeklyIntake"></div>
+
+    <script>
+        document.getElementById('calorieForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const date = document.getElementById('date').value;
+            const calories = document.getElementById('calories').value;
+            recordCalorieIntake(date, calories);
+        });
